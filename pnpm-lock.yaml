@@ -6,13 +6,11 @@ specifiers:
   '@fortawesome/free-solid-svg-icons': ^5.15.4
   '@fortawesome/react-fontawesome': ^0.1.15
   '@hookform/resolvers': ^2.8.0
-  '@material-ui/core': ^4.12.3
+  '@material-ui/core': ^4.12.4
   '@material-ui/icons': ^4.11.2
   '@userfront/react': ^0.2.21
   axios: ^0.21.4
   carousel: 0.0.3
-  google-map-react: ^2.1.10
-  google-maps-react: ^2.0.6
   material-ui-color: ^1.2.0
   react: ^17.0.2
   react-cookie: ^4.1.1
@@ -42,8 +40,6 @@ dependencies:
   '@userfront/react': 0.2.23_sfoxds7t5ydpegc3knd667wn6m
   axios: 0.21.4
   carousel: 0.0.3
-  google-map-react: 2.2.1_sfoxds7t5ydpegc3knd667wn6m
-  google-maps-react: 2.0.6_sfoxds7t5ydpegc3knd667wn6m
   material-ui-color: 1.2.0_phlbjj2qqbzyjdfzujtmlw3coi
   react: 17.0.2
   react-cookie: 4.1.1_react@17.0.2
@@ -3045,10 +3041,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
-    dev: false
-
-  /@mapbox/point-geometry/0.1.0:
-    resolution: {integrity: sha512-6j56HdLTwWGO0fJPlrZtdU/B13q8Uwmo18Ck2GnGgN9PCFyKTZ3UbXeEdRFh18i9XQ92eH2VdtpJHpBD3aripQ==}
     dev: false
 
   /@material-ui/core/4.12.4_sfoxds7t5ydpegc3knd667wn6m:
@@ -7514,31 +7506,6 @@ packages:
       object-assign: 4.1.1
       pify: 2.3.0
       pinkie-promise: 2.0.1
-    dev: false
-
-  /google-map-react/2.2.1_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-Dg8aexf5rNSmywj0XKQ5m4RNzVcWwKEM2BGDj5aPChD0um8ZRjB5Upcb/yg/i0oG1aES29asQ5+6BHVgrK5xGA==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@googlemaps/js-api-loader': 1.16.2
-      '@mapbox/point-geometry': 0.1.0
-      eventemitter3: 4.0.7
-      prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-    dev: false
-
-  /google-maps-react/2.0.6_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-M8Eo9WndfQEfxcmm6yRq03qdJgw1x6rQmJ9DN+a+xPQ3K7yNDGkVDbinrf4/8vcox7nELbeopbm4bpefKewWfQ==}
-    peerDependencies:
-      react: ~0.14.8 || ^15.0.0 || ^16.0.0
-      react-dom: ~0.14.8 || ^15.0.0 || ^16.0.0
-    dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /gopd/1.0.1:
