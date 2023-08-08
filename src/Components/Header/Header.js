@@ -22,6 +22,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#423E92",
     width: "100%",
     flexGrow: 1,
+    [theme.breakpoints.between('xs', 'sm')]:{
+      
+      border: "1px solid yellow",
+      
+      
+      
+    }
    
     
 
@@ -99,13 +106,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     marginTop: theme.spacing(3),
   },
+
   defaultColor: {
     color: "white",
     fontWeight: "lighter",
-    [theme.breakpoints.between('xs', 'sm')]:{
-      fontSize: "0.8rem",
-      
-    }
+   
   },
 }));
 
@@ -131,7 +136,7 @@ const Header = () => {
     <div className={classes.root}>
       
       <AppBar position="fixed" className={classes.root}>
-        <Toolbar className="" >
+        <Toolbar  >
         
             
             <Avatar

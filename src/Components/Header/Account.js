@@ -8,16 +8,22 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  
   buttonItem: {
     display: "flex",
     flexDirection: "column",
     marginTop: theme.spacing(1),
   },
+
   defaultColor: {
     color: "white",
     fontWeight: "light",
     backgroundColor: "tomato",
     borderRadius: "3rem",
+    [theme.breakpoints.between('xs', 'sm')]:{
+
+
+    },
 
     "&:hover": {
       backgroundColor: "red",
@@ -41,6 +47,7 @@ const Account = () => {
         onClick={onOpen}
         aria-controls="customized-menu"
         aria-haspopup="true"
+        size="small"
         className={classes.defaultColor}
       >
         ACCOUNT
