@@ -15,11 +15,15 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid tomato",
     boxShadow: theme.shadows[24],
     padding: theme.spacing(2, 4, 3),
-    position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     p: 4,
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+      width: 220,
+      left: "47%"
+    }
   },
 }));
 

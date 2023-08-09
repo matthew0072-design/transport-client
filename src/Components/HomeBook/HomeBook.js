@@ -35,19 +35,15 @@ import Image19 from "../../assets/img32.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(8),
+  
     textAlign: "right",
     width: "100%",
-    height: 400,
+    height: 600,
     position: "relative",
-    //alignItems: "center",
-    //display: "flex",
-    //justifyContent: "center",
-    //backgroundPosition: "center center",
-    //backgroundImage: `url(${Image})`,
-    //backgroundRepeat: "no-repeat",
-    //backgroundSize: "cover",
     
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: 400
+    }
   },
 
   typo: {
@@ -103,20 +99,28 @@ const useStyles = makeStyles((theme) => ({
   },
 
   image: {
-    height:400,
+    height:600,
     width: "100%",
     objectFit: "cover",
     opacity: 0.8,
+    
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: 400
+    }
   },
 
   dimDiv: {
     position: "absolute",
     top: 0,
     left: 0,
-    height: 400,
+    height: 600,
     width: "100%",
     backgroundColor: `rgba(0,0,0,.6)`,
     zIndex: 0,
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: 400
+    }
 
   }
 }));

@@ -16,21 +16,25 @@ import axios from "axios"
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    width: 700,
-    [theme.breakpoints.between('xs', 'sm')]: {
-      width: "60%"
-    }
+    width: 600,
+    
     
   },
 
   selectEmpty: {
     marginTop: theme.spacing(1),
     width: 300,
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+      width: 220,
+    }
   },
 
   selectControl: {
     display: "flex",
     justifyContent: "space-around",
+
+    
     
   },
 }));
@@ -85,7 +89,7 @@ const onSubmitHandler = (data) => {
     
   <div>
     <Grid container spacing={1}>
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={12}>
         <Box>
             <Typography variant="h6" color="primary">
               {" "}
@@ -155,8 +159,8 @@ const onSubmitHandler = (data) => {
         </Grid>
         </Grid>
         <Box   sx={{
-        mt:5,
-        ml: 35,
+        mt:1,
+        ml: 7,
         bgcolor: 'tomato',
         color: "white",
         align: "center",

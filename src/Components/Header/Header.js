@@ -13,55 +13,50 @@ import Image from "../../assets/download.jpg";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Logout from "./Signup/Logout"
+import IconButton  from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu"
 
 
 const useStyles = makeStyles((theme) => ({
  
   root: {
-    backgroundColor: "#423E92",
+    backgroundColor: "blue",
     width: "100%",
     flexGrow: 1,
-    [theme.breakpoints.between('xs', 'sm')]:{
-      
-      border: "1px solid yellow",
-      
-      
-      
-    }
+
    
-    
+        
 
   },
 
 
-  menu:{
-    display: "none",
-    
-    [theme.breakpoints.between('xs', 'sm')]:{
-      
-      position: "fixed",
-      top: "64px", // Adjust this value to align with your app's layout
-      left: 0,
-      width: "100%",
-      backgroundColor: "#423E92",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      paddingTop: theme.spacing(4),
-      paddingBottom: theme.spacing(2),
-      zIndex: 1000, // Ensure the menu is above other content
-    },
-  
+  appBar: {
+    backgroundColor: "blue",
+    width: "100%",
+    flexGrow: 1,
 
-  }, 
-  
-  deskDev: {
-    [theme.breakpoints.between('xs', 'sm')]:{
+    [theme.breakpoints.between('xs', 'sm')]: {
       display: "none"
     }
+        
+
   },
 
+
+  
+
+  mobile: {
+    display: "none",
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+
+      display: "flex",
+    alignItems: "center",
+    }
+    
+    
+
+  },
   avatar: {
     display: "flex",
 
@@ -69,7 +64,9 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(5),
     height: theme.spacing(5),
     [theme.breakpoints.between('xs', 'sm')]:{
-      display: "none"
+      height: "1.25rem",
+      width: "1.25rem",
+      
     }
   },
   heading: {
@@ -85,7 +82,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
 
     [theme.breakpoints.between('xs', 'sm')]:{
-      display: "none"
+      fontSize: "1rem",
+      fontWeight: "bolder"
     }
 
   },
@@ -99,6 +97,17 @@ const useStyles = makeStyles((theme) => ({
       
 
     }
+  },
+
+  isMobileOpen: {
+
+    display: "none",
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+      display: "flex",
+      flexDirection: "column"
+    }
+    
   },
 
   buttonItem: {
@@ -121,8 +130,8 @@ const Header = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const { user } = useContext(UserContext);
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
+  
+  const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   const handleOpen = () => {
     setOpen(true);
@@ -135,69 +144,83 @@ const Header = () => {
   return (
     <div className={classes.root}>
       
-      <AppBar position="fixed" className={classes.root}>
-        <Toolbar  >
-        
-            
-            <Avatar
+<AppBar position="fixed" className={classes.appBar}>
+<Toolbar  >
+
+    <Avatar
+    variant="square"
+    alt="Remy Sharp"
+    src={Image}
+    className={classes.avatar}
+  />
+  <Typography variant="h6" className={classes.title} color="secondary">
+    LMTS
+  </Typography>
+  <Button className={classes.defaultColor} component={Link} to="/">
+    HOME{" "}
+  </Button>
+
+  <Button className={classes.defaultColor} onClick={handleOpen}>
+    BOOKING
+  </Button>
+
+  {open && <Modal open={open} handleClose={handleClose} />}
+  {/* <Modal/> */}
+  <About />
+  <Button
+    className={classes.defaultColor}
+    component={Link}
+    to="/contact"
+  >
+    CONTACT US
+  </Button>
+  {user ? (<Logout />)
+  : (<Account />) }
+    
+</Toolbar>
+</AppBar>
+     
+      <div className={classes.mobile}>
+        <Avatar
             variant="square"
             alt="Remy Sharp"
             src={Image}
             className={classes.avatar}
-          />
-          <Typography variant="h6" className={classes.title} color="secondary">
-            LMTS
-          </Typography>
-          <Button className={classes.defaultColor} component={Link} to="/">
-            HOME{" "}
-          </Button>
+        />
+        <Typography variant="h6" className={classes.title} color="secondary">
+          LMTS
+        </Typography>
+        <IconButton onClick={() => setIsMobileOpen(!isMobileOpen)}>
+          <MenuIcon color="secondary"  />
+        </IconButton>
+      </div>
+      
+      
+     { isMobileOpen && (
+      <div className={classes.isMobileOpen}>
+        <Button className={classes.defaultColor} component={Link} to="/">
+    HOME{" "}
+  </Button>
 
-          <Button className={classes.defaultColor} onClick={handleOpen}>
-            BOOK
-          </Button>
+  <Button className={classes.defaultColor} onClick={handleOpen}>
+    BOOKING
+  </Button>
 
-          {open && <Modal open={open} handleClose={handleClose} />}
-          {/* <Modal/> */}
-          <About />
-          <Button
-            className={classes.defaultColor}
-            component={Link}
-            to="/contact"
-          >
-            CONTACT US
-          </Button>
-          {user ? (<Logout />)
-          : (<Account />) }
-            
-           
-          {/* <Button onClick={() => setIsMenuOpen(true)} color="primary" className={classes.menu}><MenuIcon /></Button>
-          
-          {isMenuOpen && (<div>
-            <Button className={classes.defaultColor} component={Link} to="/">
-            HOME{" "}
-          </Button>
+  {open && <Modal open={open} handleClose={handleClose} />}
 
-          <Button className={classes.defaultColor} onClick={handleOpen}>
-            BOOK
-          </Button>
+  <About />
+  <Button
+    className={classes.defaultColor}
+    component={Link}
+    to="/contact"
+  >
+    CONTACT US
+  </Button>
+  {user ? (<Logout />)
+  : (<Account />) }
+      </div>
+     )} 
 
-            {open && <Modal open={open} handleClose={handleClose} />}
-          {/* <Modal/> */}
-          {/* <About />
-          <Button
-            className={classes.defaultColor}
-            component={Link}
-            to="/contact"
-          >
-            CONTACT US
-          </Button>
-          {user ? (<Logout />)
-          : (<Account />) }
-          </div>) } */} 
-          
-
-        </Toolbar>
-      </AppBar>
     </div>
   );
 };

@@ -24,6 +24,8 @@ import { useStore } from "../../Store/store";
 import MenuItem from "@material-ui/core/MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const useStyles = makeStyles((theme) => ({
   
@@ -140,19 +142,32 @@ const Signup = () => {
 const [cookies, setCookie] = useCookies(["user"])
 
 const registerUser =  (data) => {
-  console.log({data})
+  
   axios
     .post("http://localhost:5000/register-user", data)
     .then(async (response) => {
-      console.log(response);
+      
       let loggedUserId = response.data.loggedUserId;
         localStorage.setItem('LoggedUserId',loggedUserId)
       createCookie(response.data.token)
       await setUserContext();
-
       history.push("/")
+      toast.success('Registration successful', 
+                    { position: "top-center",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick:true,
+                      theme: "light"
+                  })
     })
     .catch((error) => {
+      toast.error('Unable to Register', 
+                    { position: "top-center",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick:true,
+                      theme: "light"
+                  })
       console.log(error);
     });
 }
@@ -176,6 +191,7 @@ const setUserContext = async () => {
 
   return (
     <div className={classes.root}>
+      <ToastContainer/>       
       <Header />
       <Paper className={classes.formPaper} elevation={4}>
         <Box px={3} py={2}>

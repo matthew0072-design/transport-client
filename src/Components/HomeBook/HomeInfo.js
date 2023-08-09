@@ -60,7 +60,7 @@ flexItem: {
 },
 
 typoColor: {
-  color: "navy",
+  color: "blue",
   fontWeight: 600,
 },
   

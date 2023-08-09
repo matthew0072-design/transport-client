@@ -15,32 +15,51 @@ root: {
     
 
     
-    height: 500,
-    width: "100vw",
+    height: 600,
+    width: "100%",
     
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(9),
     backgroundPosition: "center center",
     backgroundImage: `url(${Image})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: 350,
+      marginTop: theme.spacing(0),
+      
+
+    }
     
 },
 
 
     box: {  
-        marginTop: "10rem",
+        marginTop: "15rem",
         marginBottom: "10rem",
-        marginLeft: "32rem",
+        marginLeft: "35rem",
         marginRight: "32rem",
         position: "relative",
-    color: "white",
-    width: 300,
-    height: 100,
-    backgroundColor: "tomato",
-    fontSize: "2rem",
-    borderRadius: "2rem",
-    border: "none",
-    outline: "none",
+        color: "white",
+        width: 300,
+        height: 100,
+        backgroundColor: "tomato",
+        fontSize: "2rem",
+        borderRadius: "2rem",
+        border: "none",
+        outline: "none",
+
+        [theme.breakpoints.between('xs', 'sm')]: {
+            marginLeft: "4rem",
+            width: 200,
+            height: 60,
+            marginRight: "0",
+            fontSize: "1.25rem",
+            fontWeight: "bolder",
+            borderRadius: "1.25rem",
+            marginTop: "10rem"
+            
+        },
 
     "&:hover": {
         backgroundColor: "red",
@@ -52,10 +71,14 @@ dimDiv: {
     position: "absolute",
     top: 0,
     left: 0,
-    height: 465,
+    height: 700,
     width: "100%",
     backgroundColor: `rgba(0,0,0,.3)`,
     zIndex: 0,
+
+    [theme.breakpoints.between('xs', 'sm')]: {
+      height: 500,
+    }
 
   }
 
@@ -138,18 +161,19 @@ const PaymentForm = () => {
       };
     
     return(
-        
+        <div>
+
+        <Header/>
         <div className={classes.root}>
             <div className={classes.dimDiv}></div>
-            <Header/>
+            
         
             <Box className={classes.box} clone>
-            <PaystackButton {...componentProps} /> 
+              <PaystackButton {...componentProps} /> 
             </Box>
-        
-        
-        
-<HomeFooter/>
+            
+        </div>
+        <HomeFooter/>
         </div>
     )
 }

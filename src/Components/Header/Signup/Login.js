@@ -18,6 +18,9 @@ import Image from "../../../assets/download.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../../Context/useContext"; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -118,9 +121,19 @@ const Login = () => {
         createCookie(response.data.token)
         await setUserContext();
         history.push("/")
+        toast.success("Login Successful", { 
+          position: toast.POSITION.TOP_CENTER,
+          theme: 'colored'
+       }) 
       })
       .catch((error) => {
         console.log(error);
+        toast.error("unable to login", {
+          position:  "top-center",
+          theme: "colored",
+          
+        })
+        
       });
   };
 
@@ -133,7 +146,9 @@ const createCookie = (token) => {
 
   return (
     <div className={classes.root}>
+      
       <Header />
+      <ToastContainer />
       <Paper elevation={5} className={classes.paperForm}>
         <Box>
           <Avatar

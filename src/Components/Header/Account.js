@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "tomato",
     borderRadius: "3rem",
     [theme.breakpoints.between('xs', 'sm')]:{
-
+      backgroundColor: "blue"
 
     },
 
