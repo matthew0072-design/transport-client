@@ -161,61 +161,61 @@ const HomeBook = () => {
    <Slider {...settings}>
    
    <div>
-          <img src={Image1} className={classes.image} />
+          <img src={Image1} className={classes.image} priority />
         </div>
         <div>
-          <img src={Image2} className={classes.image} />
+          <img src={Image2} className={classes.image} priority/>
         </div>
         <div>
-          <img src={Image3} className={classes.image} />
+          <img src={Image3} className={classes.image} priority />
         </div>
         <div>
-          <img src={Image4} className={classes.image} />
+          <img src={Image4} className={classes.image} priority />
         </div>
         <div>
-          <img src={Image5} className={classes.image} />
-        </div>
-        
-        <div>
-          <img src={Image6} className={classes.image} />
+          <img src={Image5} className={classes.image} priority />
         </div>
         
         <div>
-          <img src={Image7} className={classes.image} />
+          <img src={Image6} className={classes.image} priority />
+        </div>
+        
+        <div>
+          <img src={Image7} className={classes.image} priority/>
         </div>
         <div>
-          <img src={Image8} className={classes.image} />
+          <img src={Image8} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image9} className={classes.image} />
+          <img src={Image9} className={classes.image} priority/>
         </div> 
         
         <div>
-          <img src={Image11} className={classes.image} />
+          <img src={Image11} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image12} className={classes.image} />
+          <img src={Image12} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image13} className={classes.image} />
+          <img src={Image13} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image14} className={classes.image} />
+          <img src={Image14} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image15} className={classes.image} />
+          <img src={Image15} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image16} className={classes.image} />
+          <img src={Image16} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image17} className={classes.image} />
+          <img src={Image17} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image18} className={classes.image} />
+          <img src={Image18} className={classes.image} priority/>
         </div> 
         <div>
-          <img src={Image19} className={classes.image} />
+          <img src={Image19} className={classes.image} priority/>
         </div> 
          
          
